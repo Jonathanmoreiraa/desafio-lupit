@@ -19,13 +19,13 @@ export class TeamController {
 
   @Put(":id")
   async edit(@Param("id") id: string, @Body() data: TeamDto){
-    const parsedId = parseInt(id, 10); // Parse the string `id` to a number
+    const parsedId = parseInt(id, 10);
     return this.teamService.edit(parsedId, data);
   }
 
   @Delete(":id")
   async delete(@Param("id") id: string){
-    const parsedId = parseInt(id, 10); // Parse the string `id` to a number
+    const parsedId = parseInt(id, 10);
     return this.teamService.delete(parsedId);
   }
 }

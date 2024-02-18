@@ -18,7 +18,7 @@ export class PlayerController {
 
   @Get(":id")
   async findUnique(@Param("id") id: string){
-    const parsedId = parseInt(id, 10); // Parse the string `id` to a number
+    const parsedId = parseInt(id, 10);
     return this.playerService.findUnique(parsedId);
   }
 
@@ -30,7 +30,7 @@ export class PlayerController {
 
   @Delete(":id")
   async delete(@Param("id") id: string){
-    const parsedId = parseInt(id, 10); // Parse the string `id` to a number
+    const parsedId = parseInt(id, 10);
     return this.playerService.delete(parsedId);
   }
 }
