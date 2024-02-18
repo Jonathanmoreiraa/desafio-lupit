@@ -1,0 +1,217 @@
+.navbar{
+    background-color: rgb(111, 19, 234);
+    padding: 8px 24px;
+}
+
+.navbar p{
+    font-weight: 600;
+    color: white;
+    font-size: 24px;
+}
+
+.fundo{
+    width: 100%;
+    margin-top: 32px;
+}
+
+.fundo table{
+    background-color: white;
+}
+
+.formFundo{
+    padding: 16px 24px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.form{
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    flex-direction: column;
+}
+
+.thead{
+    height: 50px;
+    background-color: #F8FAFC;
+    border-bottom: 2px solid #cccccc4f;
+}
+
+.linha{
+    height: 40px;
+    background-color: white;
+    border-bottom: 1px solid #cccccc4f;
+}
+.linha:hover{
+    height: 40px;
+    background-color: #F8FAFC;
+}
+
+.loaderBody{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 6px 0px;
+}
+
+.loader{
+    animation: is-rotating 1s infinite;
+    border: 6px solid #e5e5e5;
+    border-radius: 50%;
+    border-top-color: rgb(111, 19, 234);
+    height: 30px;
+    width: 30px;
+}
+
+.loaderButton{
+    animation: is-rotating 1s infinite;
+    border: 2px solid #e5e5e5;
+    border-radius: 50%;
+    border-top-color: rgb(111, 19, 234);
+    height: 16px;
+    width: 16px;
+}
+
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.buttonBody{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 8px 0px;
+    cursor: pointer;
+}
+
+.button{
+    background-color: #934EF0;
+    max-width: 186px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 8px;
+}
+
+.button p{
+    margin: 8px;
+}
+
+.iconBack{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.iconBack:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.iconBack image{
+    width: 24px;
+    height: 24px;
+}
+
+.button:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    height: 36px;
+}
+
+.iconAdd{
+    width: 22px;
+    height: 18px;
+}
+
+.iconEdit{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.iconDelete{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.iconContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.inputLabel {
+    position: absolute;
+    margin-left: 2%;
+    pointer-events: none;
+    transition: transform 0.1s ease-in-out;
+    transform: translateY(-50%);
+    background-color: white;
+    color: #7a7f87;
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 15px;
+}
+
+.inputLabelEmpty {
+    position: absolute;
+    display: flex;
+    height: 40px;
+    margin-left: 2%;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7a7f87;
+}
+
+.required{
+    color: red;
+    margin-left: 2px;
+    
+}
+
+.inputField {
+    padding: 10px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 0px 8px;
+}
+
+.selectField{
+    padding: 8px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 0px 8px;
+    width: 100%;
+}
