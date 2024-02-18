@@ -7,11 +7,14 @@ import { Response } from 'express';
 export class TeamService {
     constructor(private prisma: PrismaService){}
     async create(data: TeamDto, response: Response){
-        const team = await this.prisma.team.create({
-            data
-        })
-
-        return response.status(HttpStatus.CREATED).json(team);
+        try {
+            const team = await this.prisma.team.create({
+                data
+            })
+            return response.status(HttpStatus.CREATED).json(team);
+        } catch (error) {
+            return response.status(HttpStatus.UNPROCESSABLE_ENTITY).json({ error: "Não foi possível criar o time, verifique os campos e tente novamente!"});
+        }
     }
 
     async findAll(){

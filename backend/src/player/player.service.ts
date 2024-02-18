@@ -24,7 +24,7 @@ export class PlayerService {
     
             return response.status(HttpStatus.CREATED).json(player);
         } catch (error) {
-            return response.status(HttpStatus.UNPROCESSABLE_ENTITY).json({ error: "'Não conseguimos cadastrar o jogador, tente novamente mais tarde.'"});
+            return response.status(HttpStatus.UNPROCESSABLE_ENTITY).json({ error: "Não conseguimos cadastrar o jogador, tente novamente mais tarde."});
         }
     }
 
@@ -44,18 +44,22 @@ export class PlayerService {
     }
 
     async findUnique(id: number){
-        if (!id || id === undefined) {
-            throw new HttpException('ID informado não encontrado!', HttpStatus.NOT_FOUND);
-        }
-
-        return await this.prisma.player.findUnique({
-            where: {
-                id
+        try {
+            if (!id || id === undefined) {
+                throw new HttpException('ID informado não encontrado!', HttpStatus.NOT_FOUND);
             }
-        })
+    
+            return await this.prisma.player.findUnique({
+                where: {
+                    id
+                }
+            })
+        } catch (error) {
+            throw new HttpException('Nenhum jogador encontrado com esse id!', HttpStatus.NOT_FOUND);
+        }
     }
 
-    async edit(id: number, data: PlayerDto){
+    async edit(id: number, data: PlayerDto, response: Response){
         if (data.team_id !== undefined) {
             const team = await this.prisma.team.findUnique({
                 where:{

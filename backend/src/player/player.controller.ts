@@ -23,9 +23,9 @@ export class PlayerController {
   }
 
   @Put(":id")
-  async edit(@Param("id") id: string, @Body() data: PlayerDto){
+  async edit(@Param("id") id: string, @Body() data: PlayerDto, @Res() res: Response){
     const parsedId = parseInt(id, 10);
-    return this.playerService.edit(parsedId, data);
+    return this.playerService.edit(parsedId, data, res);
   }
 
   @Delete(":id")
